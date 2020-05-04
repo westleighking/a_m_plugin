@@ -207,6 +207,7 @@
     xhrFetch: function(path, callback) {
       //support IE8's separate cross-domain object
       var xhr = inLegacyIE ? new XDomainRequest() : new XMLHttpRequest();
+      console.log(path)
       xhr.open('GET', this.endpoint + path);
       var self = this;
       xhr.onload = function() {
