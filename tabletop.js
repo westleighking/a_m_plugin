@@ -359,9 +359,13 @@
         this.foundSheetNames.push(data.feed.entry[i].title.$t);
         // Only pull in desired sheets to reduce loading
         if (this.isWanted(data.feed.entry[i].content.$t)) {
+          console.log(data.feed.entry);
           var linkIdx = data.feed.entry[i].link.length-1;
+          console.log(linkIdx);
           var sheetId = data.feed.entry[i].link[linkIdx].href.split('/').pop();
           var jsonPath = '/feeds/list/' + this.key + '/' + sheetId + '/' + this.sheetPrivacy + '/values?alt=';
+          console.log(sheetId);
+          console.log(jsonPath);
           if (inNodeJS || supportsCORS) {
             jsonPath += 'json';
           } else {
